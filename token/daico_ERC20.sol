@@ -10,6 +10,7 @@ import "../ownership/Ownable.sol";
 contract ERC20 {
   function getTotalSupply() public view returns (uint256);
   function getBalanceOf(address who) public view returns (uint256);
+  function getBeneficiaryWeiAmount() public view returns (uint256);
   function transfer(address _to, uint256 _value) public returns (bool);
   function transferFrom(address from, address to, uint256 value) public returns (bool);
   function allowance(address owner, address spender) public view returns (uint256);
@@ -56,6 +57,9 @@ contract DAICO_ERC20 is Ownable, ERC20 {
     }
     function getBalanceOf(address who) public view returns (uint256 balance) {
         return balanceOf[who];
+    }
+    function getBeneficiaryWeiAmount() public view returns (uint256 remainingWei){
+        return beneficiary.balance; 
     }
     function transfer(address _to, uint256 _value) public returns (bool success) {
         require(_to != 0x0);                               // Prevent transfer to 0x0 address. Use burn() instead
