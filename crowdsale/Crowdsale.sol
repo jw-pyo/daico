@@ -1,6 +1,6 @@
 pragma solidity ^0.4.18;
 
-import "../token/daico_ERC20.sol";
+import "../token/DAICO_ERC20.sol";
 import "../lib/SafeMath.sol";
 /**
  * @title Crowdsale
