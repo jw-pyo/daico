@@ -15,6 +15,7 @@ contract Ownable {
 
   /* VIEW FUNCTION & CONSTRUCTOR */
   function Ownable() public {
+    require(msg.sender != 0x0);
     CreateOwnership(owner);
     owner = msg.sender;
     developerLevel[owner] = DEV_LEVEL.OWNER;
