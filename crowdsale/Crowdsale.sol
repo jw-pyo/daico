@@ -15,7 +15,7 @@ import "../lib/SafeMath.sol";
 contract Crowdsale {
   using SafeMath for uint256;
   // The token being sold
-  Gmed public token; //address
+  DAICO_ERC20 public token; //address
   uint256 public startTime;
   uint256 public endTime;
   address public beneficiary; // ether collecting address for crawdsale

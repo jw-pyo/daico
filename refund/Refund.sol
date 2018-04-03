@@ -4,10 +4,14 @@ import "../token/DAICO_ERC20.sol";
 import "../ownership/Ownable.sol";
 import "../lib/SafeMath.sol";
 
-contract Refund is DAICO_ERC20, Ownable {
+contract Refund is Ownable {
     using SafeMath for uint256;
 
     DAICO_ERC20 public token;
+    /* CONSTRUCTOR */
+    function Refund(address _token) public onlyDevelopers {
+        token = DAICO_ERC20(_token);
+    }
     /* EVENTS */
     event Refund(address indexed account, uint256 refunded_wei_amount, uint256 token_amount, uint256 rate, bool success);
     /* VIEW FUNCTION */
